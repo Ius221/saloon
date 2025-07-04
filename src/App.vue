@@ -1,5 +1,6 @@
 <template>
   <div class="first-div">Welcome To Scissors & Style</div>
+
   <the-header />
   <div class="main-section">
     <h1>Hello from Vue + Bun!</h1>
