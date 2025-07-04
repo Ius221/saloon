@@ -2,4 +2,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import TheButton from './components/UI/TheButton.vue';
+
+const app = createApp(App);
+app.component('the-button', TheButton);
+
+app.mount('#app');
