@@ -1,13 +1,13 @@
 <template>
-  <div class="nav">
-    <div class="none">
+  <div class="nav" :style="{ opacity: isMobileMenuOpen ? 0.5 : 1 }">
+    <div class="logo-img">
       <img src="../../assets/logo.png" alt="" class="nav-img" />
       <p class="title">Scissors & Style</p>
     </div>
     <ul class="outer-ul">
       <li v-for="(val, ind) in middleHeading" :key="ind" class="outer-list">
         <a href="#">
-          {{ val }}
+          {{ val.toUpperCase() }}
           <img
             src="../../assets/dropdown.png"
             alt="icon"
@@ -16,8 +16,16 @@
         </a>
       </li>
     </ul>
-    <div class="none">
-      <p class="last-row">Search</p>
+    <div class="second-last">
+      <p class="last-row" style="opacity: 0.8">
+        <img
+          src="../../assets/header/search.png"
+          alt=""
+          width="24px"
+          style="margin-right: -19px"
+        />
+        Search
+      </p>
       <p class="last-row">My Account</p>
       <div class="o-div">
         <div class="appoint-btn">
@@ -30,11 +38,49 @@
           <span>BOOK NOW!</span>
         </div>
       </div>
-      <a class="last-img hamburger">
-        <img src="../../assets/menu-icon.png" alt="menu" class="menu-icon" />
-      </a>
     </div>
+    <a class="last-img hamburger">
+      <img
+        src="../../assets/menu-icon.png"
+        alt="menu"
+        class="menu-icon"
+        @click="mobileView()"
+      />
+    </a>
   </div>
+  <transition name="mobile-menu">
+    <div
+      v-if="isMobileMenuOpen"
+      class="mobile-overlay"
+      @click="closeMobileView"
+    >
+      <div class="mobile-view" @click.stop>
+        <div class="mobile-inner">
+          <div class="mobile-title">
+            <p>MAIN MENU</p>
+            <img
+              src="../../assets/cross.png"
+              alt="menu"
+              class="menu-icon"
+              @click="closeMobileView"
+            />
+          </div>
+          <div
+            class="mobile-list"
+            v-for="(val, ind) in middleHeading"
+            :key="ind"
+          >
+            <p>{{ val }}</p>
+            <img
+              src="../../assets/right-arrow.png"
+              alt="menu"
+              class="menu-icon"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -42,19 +88,30 @@ export default {
   data() {
     return {
       middleHeading: [
-        "HOME",
-        "ABOUT US",
-        "PORTFOLIOS",
-        "BLOG",
-        "PAGES",
-        "CONTACTS",
+        "Home",
+        "About Us",
+        "Portfolios",
+        "Blog",
+        "Pages",
+        "Contacts",
       ],
+      isMobileMenuOpen: false,
     };
+  },
+  methods: {
+    mobileView() {
+      this.isMobileMenuOpen = true;
+      this.$emit("mobile-menu-changed", true);
+    },
+    closeMobileView() {
+      this.isMobileMenuOpen = false;
+      this.$emit("mobile-menu-changed", false);
+    },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .nav {
   width: 100%;
   padding: 0 50px;
@@ -62,7 +119,7 @@ export default {
   /* remove this for top stick */
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1;
   background-color: #faf9f7;
   /* Ends here  */
 }
@@ -75,7 +132,8 @@ export default {
 .nav-img,
 .nav,
 .title,
-.none,
+.logo-img,
+.second-last,
 .last-row,
 .o-div,
 .outer-ul,
@@ -103,6 +161,9 @@ a,
   font-size: 12px;
   font-weight: 600;
   transition: all 0.5s ease;
+}
+.last-row {
+  margin-right: 50px;
 }
 a {
   height: 100%;
@@ -188,6 +249,153 @@ button {
   padding: 0;
   cursor: pointer;
 }
-
-
+/* Mobile view */
+.mobile-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+  color: #000;
+  width: 330px;
+  height: 100%;
+}
+.mobile-inner {
+  padding: 10px 30px;
+}
+.mobile-title,
+.mobile-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.mobile-title p,
+.mobile-list p {
+  font-size: 0.875rem;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 18px;
+}
+.mobile-title img,
+.mobile-list img {
+  height: 15px;
+  width: 15px;
+}
+.mobile-title p {
+  font-weight: 600;
+  border-bottom: 2px solid #a95e49;
+}
+/* Mobile menu transition classes */
+.mobile-menu-enter-active,
+.mobile-menu-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+.mobile-menu-enter-from {
+  opacity: 0;
+}
+.mobile-menu-enter-to {
+  opacity: 1;
+}
+.mobile-menu-leave-from {
+  opacity: 1;
+}
+.mobile-menu-leave-to {
+  opacity: 0;
+}
+.mobile-menu-enter-active .mobile-view,
+.mobile-menu-leave-active .mobile-view {
+  transition: transform 0.3s ease-in-out;
+}
+.mobile-menu-enter-from .mobile-view {
+  transform: translateX(-100%);
+}
+.mobile-menu-enter-to .mobile-view {
+  transform: translateX(0);
+}
+.mobile-menu-leave-from .mobile-view {
+  transform: translateX(0);
+}
+.mobile-menu-leave-to .mobile-view {
+  transform: translateX(-100%);
+}
+.hamburger {
+  display: none;
+}
+@media (max-width: 1280px) {
+  .hamburger {
+    display: flex;
+  }
+  .outer-ul {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .nav {
+    padding: 0 25px;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .outer-ul {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 25px;
+  }
+  .hamburger .menu-icon {
+    margin-top: 43px;
+  }
+  .title {
+    font-size: 19px;
+    width: 50px;
+  }
+  .nav-img {
+    width: 40px;
+    padding: 20px 0;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .outer-ul {
+    display: none;
+  }
+  .second-last {
+    display: none;
+  }
+}
+@media (max-width: 640px) {
+  .nav {
+    padding: 0;
+  }
+  .hamburger .menu-icon {
+    margin-top: 43px;
+  }
+  .title {
+    font-size: 16px;
+    width: 50px;
+  }
+  .nav-img {
+    width: 40px;
+    padding: 20px 0;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .outer-ul {
+    display: none;
+  }
+  .second-last {
+    display: none;
+  }
+}
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
 </style>
