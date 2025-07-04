@@ -1,7 +1,16 @@
 <template>
+  <div class="search-box" v-if="showSearchBox">
+    <input type="text" class="search-open" placeholder="Search..." />
+    <img
+      src="../../assets/header/cross.png"
+      alt=""
+      width="24px"
+      @click="showSearchBox = false"
+    />
+  </div>
   <div class="nav" :style="{ opacity: isMobileMenuOpen ? 0.5 : 1 }">
     <div class="logo-img">
-      <img src="../../assets/logo.png" alt="" class="nav-img" />
+      <img src="../../assets/header/logo.png" alt="" class="nav-img" />
       <p class="title">Scissors & Style</p>
     </div>
     <ul class="outer-ul">
@@ -9,7 +18,7 @@
         <a href="#">
           {{ val.toUpperCase() }}
           <img
-            src="../../assets/dropdown.png"
+            src="../../assets/header/dropdown.png"
             alt="icon"
             class="menu-icon active"
           />
@@ -17,12 +26,13 @@
       </li>
     </ul>
     <div class="second-last">
-      <p class="last-row" style="opacity: 0.8">
+      <p class="last-row" style="opacity: 0.8" @click="showSearchBox = true">
         <img
           src="../../assets/header/search.png"
           alt=""
           width="24px"
           style="margin-right: -19px"
+          @click="showSearchBox = true"
         />
         Search
       </p>
@@ -30,7 +40,7 @@
       <div class="o-div">
         <div class="appoint-btn">
           <img
-            src="../../assets/calender.png"
+            src="../../assets/header/calender.png"
             alt="icon"
             class="menu-icon"
             style="margin-left: 0; opacity: 0.7"
@@ -41,13 +51,14 @@
     </div>
     <a class="last-img hamburger">
       <img
-        src="../../assets/menu-icon.png"
+        src="../../assets/header/menu-icon.png"
         alt="menu"
         class="menu-icon"
         @click="mobileView()"
       />
     </a>
   </div>
+
   <transition name="mobile-menu">
     <div
       v-if="isMobileMenuOpen"
@@ -59,7 +70,7 @@
           <div class="mobile-title">
             <p>MAIN MENU</p>
             <img
-              src="../../assets/cross.png"
+              src="../../assets/header/cross.png"
               alt="menu"
               class="menu-icon"
               @click="closeMobileView"
@@ -72,7 +83,7 @@
           >
             <p>{{ val }}</p>
             <img
-              src="../../assets/right-arrow.png"
+              src="../../assets/header/right-arrow.png"
               alt="menu"
               class="menu-icon"
             />
@@ -81,6 +92,22 @@
       </div>
     </div>
   </transition>
+  <div class="bottom-fixed">
+    <div class="bottom-bar">
+      <div class="last-thing" @click="showSearchBox = true">
+        <img src="../../assets/header/search.png" alt="" width="24px" />
+        <p>Search</p>
+      </div>
+      <div class="last-thing">
+        <img src="../../assets/header/user.png" alt="" width="24px" />
+        <p>Account</p>
+      </div>
+      <div class="last-thing">
+        <img src="../../assets/header/cart.png" alt="" width="24px" />
+        <p>Cart</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -96,6 +123,7 @@ export default {
         "Contacts",
       ],
       isMobileMenuOpen: false,
+      showSearchBox: false,
     };
   },
   methods: {
@@ -320,6 +348,53 @@ button {
 .hamburger {
   display: none;
 }
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-evenly;
+}
+.bottom-fixed {
+  display: none;
+}
+.search-open {
+  top: 0;
+  width: 95%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  padding-left: 20px;
+  border: none;
+  padding: 10px;
+}
+
+.search-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: -42px;
+  width: 100%;
+  background-color: #fff;
+}
+.search-box img {
+  width: 22px;
+  height: 22px;
+  margin-top: 9px;
+  cursor: pointer;
+}
+.bottom-bar {
+  padding: 20px 0;
+}
+.last-thing p {
+  font-family: "Montserrat", sans-serif;
+  padding: 5px 0;
+}
 @media (max-width: 1280px) {
   .hamburger {
     display: flex;
@@ -363,6 +438,13 @@ button {
   .second-last {
     display: none;
   }
+
+  .bottom-fixed {
+    display: flex;
+  }
+  .search-open {
+    font-size: 16px;
+  }
 }
 @media (max-width: 640px) {
   .nav {
@@ -387,6 +469,15 @@ button {
   }
   .second-last {
     display: none;
+  }
+  .bottom-fixed {
+    display: flex;
+  }
+  .last-thing p {
+    display: none;
+  }
+  .search-open {
+    font-size: 16px;
   }
 }
 .mobile-overlay {
