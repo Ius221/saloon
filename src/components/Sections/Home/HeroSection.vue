@@ -29,10 +29,15 @@
       ></div>
     </div>
   </section>
+  <first-section />
 </template>
 
 <script>
+import FirstSection from "./FirstSection.vue";
 export default {
+  components: {
+    FirstSection,
+  },
   data() {
     return {
       slides: [
@@ -150,15 +155,15 @@ export default {
 }
 
 .slide-1 {
-  background-image: url("../../assets/hero/img-1.png");
+  background-image: url("../../../assets/hero/img-1.png");
 }
 
 .slide-2 {
-  background-image: url("../../assets/hero/img-2.png");
+  background-image: url("../../../assets/hero/img-2.png");
 }
 
 .slide-3 {
-  background-image: url("../../assets/hero/img-3.png");
+  background-image: url("../../../assets/hero/img-3.png");
 }
 
 .hero-content {

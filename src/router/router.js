@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HeroSection from '../components/Sections/HeroSection.vue';
+import HeroSection from '../components/Sections/Home/HeroSection.vue';
 const routes = [
     { path: '/', component: HeroSection },
     { path: '/home', component: HeroSection },
