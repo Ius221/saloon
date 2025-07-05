@@ -10,14 +10,12 @@
           />
         </div>
         <p class="small-content">NEWSLETTER SIGNUP</p>
-        <p class="main-content">
-          <!-- <center> -->
-          Want to get updates on Hair & Wellness news?
-          <!-- </center> -->
-        </p>
+        <p class="main-content">Want to get updates on Hair & Wellness news?</p>
         <div class="email-field">
           <input type="email" class="email-here" placeholder="Your Email" />
-          <p class="small-content">SUBSCRIBE</p>
+          <p class="small-content" style="color: rgb(189, 118, 85)">
+            SUBSCRIBE
+          </p>
         </div>
         <div class="list-item">
           <ul>
@@ -29,7 +27,12 @@
         <div class="copyright">
           <p>
             © Copyright 2023
-            <span style="color: rgb(189, 118, 85); cursor: pointer"
+            <span
+              style="
+                color: rgb(189, 118, 85);
+                cursor: pointer;
+                font-weight: 600;
+              "
               >Scissors & Style</span
             >. All rights reserved.
           </p>
