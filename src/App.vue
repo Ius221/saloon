@@ -6,7 +6,7 @@
   <the-header @mobile-menu-changed="handleMobileMenuChange" />
   <route-view />
   <div class="main-section" :style="{ opacity: isMobileMenuOpen ? 0.5 : 1 }">
-    <!-- <h1>Hello</h1>
+    <h1>Hello</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolor
       asperiores explicabo, quae similique eos error, incidunt nesciunt, natus
@@ -106,7 +106,7 @@
       facere temporibus amet nulla, qui, minima dolor laboriosam corporis
       delectus molestias fuga quam magnam architecto. Accusantium ab molestiae
       ex ipsam similique.
-    </p> -->
+    </p>
   </div>
   <the-footer />
 </template>

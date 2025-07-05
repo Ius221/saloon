@@ -11,10 +11,9 @@
         </div>
         <p class="small-content">NEWSLETTER SIGNUP</p>
         <p class="main-content">
-          <center>
-            Want to get updates on Hair <br />
-            & Wellness news?
-          </center>
+          <!-- <center> -->
+          Want to get updates on Hair & Wellness news?
+          <!-- </center> -->
         </p>
         <div class="email-field">
           <input type="email" class="email-here" placeholder="Your Email" />
@@ -70,7 +69,6 @@ ul {
   display: flex;
   gap: 35px;
   padding: 14px 0;
-
   font-weight: 500;
   font-size: 14px;
   text-transform: capitalize;
@@ -103,7 +101,8 @@ li:hover {
 .main-content {
   font-size: 40px;
   text-transform: capitalize;
-  width: 50%;
+  text-align: center;
+  width: 475px;
   padding: 15px 0;
   font-family: "Oranienbaum", serif;
 }
@@ -155,5 +154,58 @@ li:hover {
 }
 .copyright {
   margin-top: 10px;
+}
+@media (max-width: 1080px) {
+}
+@media (max-width: 1028px) {
+}
+@media (max-width: 768px) {
+  .img {
+    background-image: linear-gradient(to top right, #ffdce2, #ffffff);
+  }
+  .img-div {
+    padding-bottom: 15vh;
+    padding-top: 3vh;
+  }
+  .main-content {
+    width: 350px;
+    font-size: 35px;
+    padding: 0;
+  }
+}
+@media (max-width: 640px) {
+  .img {
+    background-image: linear-gradient(to top right, #ffdce2, #ffffff);
+  }
+  .img-div {
+    gap: 0;
+    padding-bottom: 10vh;
+    padding-top: 2vh;
+  }
+  .main-content {
+    width: 350px;
+    font-size: 35px;
+    padding: 0;
+  }
+  .small-content {
+    font-size: 0.75rem;
+    margin: 28px 0;
+  }
+  .email-field {
+    width: 350px;
+  }
+  .copyright {
+    width: 340px;
+    font-size: 12px;
+  }
+  ul {
+    width: 350px;
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* 3 columns */
+    grid-template-rows: repeat(2, 0px); /* 2 rows, 150px height each */
+    place-items: center;
+    margin: 0 auto;
+    margin-bottom: 35px;
+  }
 }
 </style>
