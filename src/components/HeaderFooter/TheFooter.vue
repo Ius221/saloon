@@ -3,11 +3,13 @@
     <div class="img">
       <div class="img-div">
         <div>
-          <img
-            src="../../assets/header/logo.png"
-            width="50px"
-            class="logo-img"
-          />
+          <router-link to="/home">
+            <img
+              src="../../assets/header/logo.png"
+              width="50px"
+              class="logo-img"
+            />
+          </router-link>
         </div>
         <p class="small-content">NEWSLETTER SIGNUP</p>
         <p class="main-content">Want to get updates on Hair & Wellness news?</p>
@@ -100,6 +102,7 @@ li:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 }
 .main-content {
   font-size: 40px;

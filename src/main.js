@@ -2,11 +2,15 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router/router';
+import components from './components/setupImports.js';
 
-import TheButton from './components/UI/TheButton.vue';
+
+
 
 const app = createApp(App);
-app.component('the-button', TheButton);
+Object.entries(components).forEach(([name, component]) => {
+    app.component(name, component);
+});
 app.use(router)
 
 app.mount('#app');

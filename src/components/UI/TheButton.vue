@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   gap: 7px;
+  justify-content: center;
   color: #000;
   background-color: #fff;
   font-weight: 600;

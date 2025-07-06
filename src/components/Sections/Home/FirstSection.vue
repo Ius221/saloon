@@ -1,12 +1,12 @@
 <template>
   <div class="outer-all">
-    <div class="first-child">our services</div>
-    <div class="title">Your Satisfaction Is Our Priority</div>
-    <p class="description">
+    <small-title class="title">our services</small-title>
+    <the-title class="title">Your Satisfaction Is Our Priority</the-title>
+    <the-description>
       We performs a full spectrum of body contouring, facial plastic surgery,
       and breast enhancement procedures. We uses many sophisticated,
       customizable techniques to suit your specific needs and preferences.
-    </p>
+    </the-description>
     <div class="img-section">
       <div class="first-img">
         <img src="./img-1.png" class="item first" />
@@ -36,45 +36,10 @@ export default {
   align-items: center;
   margin: 0 auto;
 }
-
-.first-child {
-  width: 440px;
-  height: 18px;
-  margin-bottom: 19px;
-  display: block;
-  font-size: 12px;
-  font-family: Montserrat;
-  font-weight: 600;
-  text-align: center;
-  line-height: 18px;
-  color: rgb(189, 118, 85);
-  letter-spacing: 2px;
-}
-
 .title {
-  width: 440px;
-  height: 120.938px;
-  display: block;
-  font-size: 54px;
-  font-family: Oranienbaum;
-  font-weight: 400;
   text-align: center;
-  line-height: 60.48px;
-  color: rgb(34, 29, 26);
-  letter-spacing: -0.54px;
-}
-
-.description {
-  width: 671px;
-  height: 143px;
-  padding-bottom: 59px;
-  display: block;
-  font-size: 16px;
-  font-family: Montserrat, sans-serif;
-  font-weight: 400;
-  text-align: center;
-  line-height: 28px;
-  color: rgb(87, 83, 81);
+  display: flex;
+  justify-content: center;
 }
 
 .first-img {
@@ -110,7 +75,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(255, 255, 255);
+  background: #faf9f7;
   font-size: 22px;
   font-family: Oranienbaum;
   font-weight: 400;
@@ -128,23 +93,10 @@ img {
     max-width: 800px;
   }
 
-  .first-child {
-    height: 4px;
-  }
-
   .first-img {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 150px);
     gap: 10px;
-  }
-
-  .title {
-    font-size: 2rem;
-    height: 70px;
-  }
-
-  .description {
-    width: 400px;
   }
 
   .third {
@@ -161,23 +113,10 @@ img {
     margin-top: 25px;
   }
 
-  .first-child {
-    height: 4px;
-  }
-
   .first-img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-
-  .title {
-    font-size: 2rem;
-    height: 70px;
-  }
-
-  .description {
-    width: 400px;
   }
 
   .img-text {

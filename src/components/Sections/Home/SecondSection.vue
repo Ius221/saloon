@@ -9,12 +9,12 @@
       </div>
     </div>
     <div class="container-div">
-      <div class="small-title">THE BEST STUDIO SINCE 2010</div>
-      <div class="actual-title">We Will Change Your Out Looks</div>
-      <div class="description">
+      <small-title>THE BEST STUDIO SINCE 2010</small-title>
+      <the-title>We Will Change Your Out Looks</the-title>
+      <the-description>
         Our cosmetology program transitions you from a creative, willing learner
         to a confident, licensed hair professional ready to jump into a career.
-      </div>
+      </the-description>
       <div class="time">
         <div class="first-time">
           <div class="real-time">10+</div>
@@ -35,7 +35,10 @@
 </template>
 
 <script>
+import SmallTitle from "../../UI/SmallTitle.vue";
+import TheTitle from "../../UI/TheTitle.vue";
 export default {
+  components: { SmallTitle, TheTitle },
   name: "DynamicHero",
   data() {
     return {
@@ -148,31 +151,6 @@ export default {
   text-align: center;
   line-height: 28px;
   color: rgb(87, 83, 81);
-}
-
-.small-title {
-  width: 100%;
-  max-width: 486px;
-  height: auto;
-  margin: 0px 0px 22.4px;
-  font-size: 12px;
-  font-family: Montserrat;
-  font-weight: 600;
-  line-height: 18px;
-  color: rgb(189, 118, 85);
-  letter-spacing: 2px;
-}
-
-.actual-title {
-  width: 100%;
-  max-width: 486px;
-  height: auto;
-  font-size: 54px;
-  font-family: Oranienbaum;
-  font-weight: 400;
-  line-height: 60.48px;
-  color: rgb(34, 29, 26);
-  letter-spacing: -0.54px;
 }
 
 .description {
@@ -295,20 +273,6 @@ img {
     justify-content: flex-start;
     width: auto;
     padding: 20px 0;
-  }
-
-  .actual-title {
-    height: 90px;
-    font-size: 2rem;
-    text-align: center;
-    width: 300px;
-    line-height: 1;
-  }
-
-  .small-title {
-    display: flex;
-    justify-content: center;
-    margin-top: 24px;
   }
 
   .btn {
