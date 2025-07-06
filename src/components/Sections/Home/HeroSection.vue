@@ -31,10 +31,12 @@
   </section>
   <first-section />
   <second-section />
-  <ThirdSection />
+  <third-section />
+  <final-section />
 </template>
 
 <script>
+import FinalSection from "./FinalSection.vue";
 import FirstSection from "./FirstSection.vue";
 import SecondSection from "./SecondSection.vue";
 import ThirdSection from "./ThirdSection.vue";
@@ -43,6 +45,7 @@ export default {
     FirstSection,
     SecondSection,
     ThirdSection,
+    FinalSection,
   },
   data() {
     return {

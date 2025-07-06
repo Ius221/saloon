@@ -13,8 +13,8 @@
         <img src="./img-1.png" class="item second" />
         <img src="./img-1.png" class="item third" />
         <p class="item img-text first">Haircut</p>
-        <p class="item img-text second">Haircut</p>
-        <p class="item img-text third">Haircut</p>
+        <p class="item img-text second">Facial Treatments</p>
+        <p class="item img-text third">Hair Coloring</p>
       </div>
     </div>
   </div>

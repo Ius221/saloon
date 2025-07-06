@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="container-div">
-      <small-title>THE BEST STUDIO SINCE 2010</small-title>
+      <small-title>THE BEST STUDIO SINCE 2015</small-title>
       <the-title>We Will Change Your Out Looks</the-title>
       <the-description>
         Our cosmetology program transitions you from a creative, willing learner

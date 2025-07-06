@@ -35,34 +35,29 @@ export default {
       cards: [
         {
           img: "./image.png",
-          title: "Barbering",
-          desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur!",
+          title: "Haircut & Styling",
+          desc: "Precision cuts and custom styles tailored to your personality, perfect for everyday or special occasions.",
         },
         {
           img: "./image.png",
 
-          title: "Barbering",
-          desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur!",
+          title: "Hair Spa",
+          desc: "Rejuvenate dull, tired hair with deep conditioning, massage, and repair treatment for ultimate shine.",
         },
         {
           img: "./image.png",
-
-          title: "Barbering",
-          desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur!",
+          title: "Hair Coloring",
+          desc: "Get bold, beautiful, or subtle shades using premium color products that protect and nourish your hair",
         },
         {
-          //   img: "./img-1.png",
           img: "./image.png",
-
-          title: "Barbering",
-          desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur!",
+          title: "Facial Treatments",
+          desc: "Brighten, hydrate, and cleanse your skin with customized facials suited to your skin type.",
         },
         {
-          //   img: "./img-1.png",
           img: "./image.png",
-
-          title: "Barbering",
-          desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur!",
+          title: "Threading & Waxing",
+          desc: "Perfectly shaped brows and smooth skin with hygienic, gentle hair removal for face and body",
         },
       ],
     };
@@ -135,8 +130,8 @@ export default {
   font-size: 1.5rem;
   margin-bottom: 5px;
 }
-.hide {
-}
+/* .hide {
+} */
 
 img {
   width: 228.484px;
@@ -195,6 +190,8 @@ img {
 
   .desc {
     width: auto;
+    font-size: 12px;
+    line-height: 1.5;
     text-align: center;
   }
 
