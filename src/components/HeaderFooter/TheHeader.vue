@@ -38,15 +38,8 @@
       </p>
       <p class="last-row">My Account</p>
       <div class="o-div">
-        <div class="appoint-btn">
-          <img
-            src="../../assets/header/calender.png"
-            alt="icon"
-            class="menu-icon"
-            style="margin-left: 0; opacity: 0.7"
-          />
-          <span>BOOK NOW!</span>
-        </div>
+      
+        <the-button>BOOK NOW!</the-button>
       </div>
     </div>
     <a class="last-img hamburger">

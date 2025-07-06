@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HeroSection from '../components/Sections/Home/HeroSection.vue';
 const routes = [
-    { path: '/', component: HeroSection },
+    { path: '/', redirect: '/home' },
     { path: '/home', component: HeroSection },
 ]
 

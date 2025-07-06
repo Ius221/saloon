@@ -52,6 +52,6 @@ export default {
   font-size: 13px;
 }
 .main-section {
-  /* background-color: #f6c3aa; */
+  background-color: #faf9f7;
 }
 </style>

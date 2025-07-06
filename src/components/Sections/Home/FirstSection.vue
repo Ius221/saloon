@@ -27,12 +27,6 @@ export default {
 </script>
 
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .outer-all {
   padding: 10vh 0;
   max-width: 1200px;

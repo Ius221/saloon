@@ -14,7 +14,7 @@
         <h1 class="hero-title">{{ slide.title }}</h1>
         <p class="hero-subtitle">{{ slide.subtitle }}</p>
         <div class="hero-cta">
-          <a href="#" class="btn btn-primary">{{ slide.button }}</a>
+          <the-button class="btn btn-primary">{{ slide.button }}</the-button>
         </div>
       </div>
     </div>
@@ -30,13 +30,16 @@
     </div>
   </section>
   <first-section />
+  <second-section />
 </template>
 
 <script>
 import FirstSection from "./FirstSection.vue";
+import SecondSection from "./SecondSection.vue";
 export default {
   components: {
     FirstSection,
+    SecondSection,
   },
   data() {
     return {

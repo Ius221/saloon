@@ -1,62 +1,39 @@
 <template>
-  <div class="holographic-container">
-    <div class="holographic-card">
-      <h2><slot /></h2>
-    </div>
+  <div class="appoint-btn">
+    <span><slot /></span>
   </div>
 </template>
 
-<style>
-.holographic-container {
+<style scoped>
+.appoint-btn {
+  font-size: 12px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 20px;
-  background: #fff;
+  gap: 7px;
+  color: #000;
+  background-color: #fff;
+  font-weight: 600;
+  margin-right: 26px;
+  transition: all 0.7s ease;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  border: 1px solid black;
+  padding: 12px 24px;
 }
-
-.holographic-card {
-  width: 300px;
-  height: 200px;
-  background: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  transition: all 0.5s ease;
+.appoint-btn:hover {
+  color: #a95e49;
+  border-color: #f6c3aa;
+  transform: scale(1.05);
+  border-width: 2px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #f6c3aa;
 }
-.holographic-card h2 {
-  color: #0ff;
-  font-size: 2rem;
-  position: relative;
+span {
+  background-color: #faf9f7;
+  font-weight: bold;
   z-index: 2;
 }
-.holographic-card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    0deg,
-    transparent,
-    transparent 30%,
-    rgba(0, 255, 255, 0.3)
-  );
-  transform: rotate(-45deg);
-  transition: all 0.5s ease;
-  opacity: 0;
-}
-
-.holographic-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-}
-
-.holographic-card:hover::before {
+.appoint-btn:hover::before {
   opacity: 1;
   transform: rotate(-45deg) translateY(100%);
 }
