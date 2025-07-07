@@ -9,9 +9,9 @@
     </the-description>
     <div class="img-section">
       <div class="first-img">
-        <img src="./img-1.png" class="item first" />
-        <img src="./img-1.png" class="item second" />
-        <img src="./img-1.png" class="item third" />
+        <img src="./img--.jpg" class="item first" />
+        <img src="./img--.jpg" class="item second" />
+        <img src="./img--.jpg" class="item third" />
         <p class="item img-text first">Haircut</p>
         <p class="item img-text second">Facial Treatments</p>
         <p class="item img-text third">Hair Coloring</p>
